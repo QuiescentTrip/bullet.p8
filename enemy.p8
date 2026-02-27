@@ -57,6 +57,11 @@ function update_bullets()
     end
 end
 
+function e_draw()
+    draw_enemies()
+    for b in all(bullets) do pset(b.x, b.y, 7) end
+end
+
 function _init()
     init_enemy_system()
 end
@@ -66,10 +71,10 @@ function _update()
     update_bullets()
 end
 
+
 function _draw()
     cls()
-    draw_enemies()
-    for b in all(bullets) do pset(b.x, b.y, 7) end
+    e_draw()
 end
     
 

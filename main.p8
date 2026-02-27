@@ -2,10 +2,19 @@ pico-8 cartridge // http://www.pico-8.com
 version 43
 __lua__
 #include player.p8
+#include enemy.p8
+
+function _init()
+    init_enemy_system()
+end
 
 function _update()
-    cls(0)
     player_update()
+end
+
+function _draw()
+    cls(0)
+    e_draw() 
 end
 
 __gfx__
